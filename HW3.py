@@ -1,6 +1,6 @@
-# Name:
-# Student ID:
-# Email:
+# Name: Jack Davidson
+# Student ID: 52442767
+# Email: jackld@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
 # If you worked with generative AI also add a statement for how you used it.
 # e.g.:
@@ -26,24 +26,17 @@ class CouponDispenser:
     """
 
     def __init__(self, coupon_cards):
-        """
-        Initialize a new CouponDispenser object.
-
-        Args:
-            coupon_cards (list[str]): list of possible coupons users can receive.
-        """
-        # TODO: Implement per instructions
-        pass
+        
+        self.coupon_cards = coupon_cards
+        self.customer_roster = []
+        self.issued_indices = []
+     
 
     def __str__(self):
-        """
-        Return a single string with all coupons in coupon_cards joined by pipes ('|').
-        If coupon_cards is empty, return an empty string "".
-
-        Returns:
-            str
-        """
-        # TODO: Implement per instructions
+        
+        if self.coupon_cards == []:
+            return ""
+        return "|".join(self.coupon_cards)
         pass
 
     def issue_coupon(self, name):
@@ -60,7 +53,20 @@ class CouponDispenser:
         Returns:
             str: message as described above
         """
-        # TODO: Implement per instructions
+        if self.coupon_cards == []:
+            return "The box is empty."
+        if name in self.customer_roster:
+            index = self.customer_roster.index(name)
+            coupon_index = self.issued_indices[index]
+            coupon = self.coupon_cards[coupon_index]
+            return f"That name already has a coupon: {coupon}"
+        else:
+            r_index = random.randint(0, len(self.coupon_cards) - 1)
+
+            self.customer_roster.append(name)
+            self.issued_indices.append(r_index)
+
+            return self.coupon_cards[r_index]
         pass
 
     def distribute_session(self):
@@ -399,5 +405,5 @@ def test():
 
 if __name__ == "__main__":
     main()
-    # test()
+    test()
 
