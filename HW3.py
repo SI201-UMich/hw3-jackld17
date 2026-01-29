@@ -84,6 +84,33 @@ class CouponDispenser:
 
         Reminder: Use lists only (no dictionaries).
         """
+
+        while True:
+            user_input = input( f" Enter a name (or multiple sperated by commas), or type 'show' or 'exit': ")
+
+            # Exit condition
+            if user_input == "exit":
+                print("Goodbye!")
+                break
+
+            # Show condition
+            elif user_input == "show":
+                for i in range(len(self.customer_roster)):
+                    name = self.customer_roster[i]
+                    coupon_index = self.issued_indices[i]
+                    coupon = self.coupon_cards[coupon_index]
+                    print(f"{name}: {coupon}")
+
+            # Otherwise treat as names
+            else:
+                pieces = user_input.split(",")
+
+                for piece in pieces:
+                    name = piece.strip()
+                    if name != "":
+                        result = self.issue_coupon(name)
+                        print(result)
+
         # TODO: Implement per instructions 
         pass
 
@@ -102,6 +129,8 @@ class CouponDispenser:
         Returns:
             None
         """
+
+
         # TODO: Implement per instructions
         pass
 
@@ -122,9 +151,9 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    #box.tally_distribution()
     pass
 
 
@@ -405,5 +434,5 @@ def test():
 
 if __name__ == "__main__":
     main()
-    test()
+    #test()
 
