@@ -1,12 +1,11 @@
 # Name:
 # Student ID:
 # Email:
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
+# Who or what you worked with on this homework (including generative AI like ChatGPT): ChatGPT
 # If you worked with generative AI also add a statement for how you used it.
-# e.g.:
-# Asked ChatGPT hints for debugging and suggesting the general structure of the code
+# e.g.: I used ChatGPT to help debug my code. I did not use it to assist in writing any code.
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+#    your Gen AI contract? If not, why?: Yes, I did not immediatly resort to AI, I tried asking peers first.
 
 import random
 import io
@@ -81,26 +80,11 @@ class CouponDispenser:
             self.issued_indices.append(r_index)
 
             return self.coupon_cards[r_index]
-        pass
 
         # TODO: Implement per instructions
         pass
 
     def distribute_session(self):
-        """
-        Run the "coupon dispenser" session.
-
-        The program will loop asking you to enter a customer name (or names), show, or exit.  
-        - If you type exit (exact spelling) the program will print "Goodbye!" and stop.  
-        - If you enter one or more customer names (separated by commas).
-           * A coupon will be picked at random from a list of coupons for each name 
-           if that name doesn't already have an assigned coupon. 
-        - If you type show (exact spelling) it will display a string with each customer's name and coupon.
-
-        See the instructions for more details.
-
-        Reminder: Use lists only (no dictionaries).
-        """
         round_number = 1
         while True:
             user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
@@ -123,12 +107,12 @@ class CouponDispenser:
                     name = piece.strip()
                     if name != "":
                         result = self.issue_coupon(name)
-                        print(result)
+                        print(f"{piece}: {result})
             round_number +=1
         # TODO: Implement per instructions 
         pass
     def tally_distribution(self):
-        """
+    
         Extra credit:
         Print coupon distribution counts (NO sorting) using ONLY lists.
 
