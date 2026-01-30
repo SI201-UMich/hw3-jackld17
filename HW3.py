@@ -1,12 +1,11 @@
 # Name: Jack Davidson
 # Student ID: 52442767
 # Email: jackld@umich.edu
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
-# If you worked with generative AI also add a statement for how you used it.
-# e.g.:
-# Asked ChatGPT hints for debugging and suggesting the general structure of the code
+# Who or what you worked with on this homework (including generative AI like ChatGPT): chatGPT
+# If you worked with generative AI also add a statement for how you used it:
+# I used chatGPT to help me debug my code. I did not use it to assist in any part of writing the code.
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+#    your Gen AI contract? If not, why?: I followed my contract becasue I asked a peer for help first, not only resorting to AI.
 
 import random
 import io
